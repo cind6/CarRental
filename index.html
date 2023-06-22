@@ -12,79 +12,108 @@
 
 <body>
 
-    <h1 id="greeting">ACME Car Rentals</h1>
-    <main class="container">
-        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-            <div class="row">
+    <h1 id="title">ACME Car Rentals</h1>
+    <main>
 
-                <label for="Enterdate">Enter a date:</label>
-                <input type="date" id="EnterDate">
-                <br>
-                <label for="number1Field">Number Of Days:</label>
-                <input type="number" id="number1Field">
-                <br>
-                <h5>Options</h5>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                    <label class="form-check-label" for="flexCheckDefault1">
-                        Electronic Toll Tag ($3.95/Day)
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked>
-                    <label class="form-check-label" for="flexCheckChecked2">
-                        GPS ($2.95/Day)
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-                    <label class="form-check-label" for="flexCheckDefault3">
-                        Roadside Assitance($2.95/Day)
-                    </label>
-                </div>
-                <!------end of Options-->
-                <h5>Under 25</h5>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Yes
-                    </label>
-                </div>
-                <div class="form-check-inline form-check-inline">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        No
-                    </label>
-                </div>
-                <!---End of under 25 -->
-                
-                <!---total results -->
+        <div class="container">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                <div class="row">
 
-                <div class="row mb-2">
                     <div class="col">
-                        <button type="submit" class="btn btn-primary">Submit Order</button>
-                        <br>
-                    </div>
-                </div>
-                <div class="row mb-1">
-                    <div class="col">
-                        <label for="base-price">Base Price: $</label>
-                        <span id="base-price" class="value">xx.xx</span>
-                    </div>
-                  <div class="form-group">
-                    <label for="tax">Tax: $</label>
-                    <span id="tax-amount" class="value">xx.xx</span>
-                  </div>
-                  <div class="form-group">
-                    <label for="total-due">Total Due :$</label>
-                    <span id="total-amount" class="value">xx.xx</span>
-                  </div>
-                </div>
-                
 
-                <!-- your content goes here -->
-            </div>
-        </form>
+                        <label for="enterDate">Enter a date:</label>
+                        <input type="date" id="enterDate" name="enterDate" placeholder="YYYY-MM-DD" required>
+                        
+                    </div>
+
+                       <div>
+                        <label for="numberOfDays" class="form-label">Number Of Days:</label>
+                        <input type="number" id="numberOfDays" class="form-control-sm" >
+                       </div>
+
+                   
+                    
+                    <div id="OptionsRow" class="row mb-1 mb-3 mt-5">
+                        <div class="col">
+                            <h3>Options</h3>
+                            <div class="row mb-1">
+                                <div class="border border-black margin-top">
+
+
+
+                                    <div class="form-check">
+                                        
+                                        <input class="form-check-input" type="checkbox" value="" id="tollOption">
+                                        <label class="form-check-label" for="tollOption">Electronic Toll Tag ($3.95/Day) </label>
+                                       
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="gpsOption" checked>
+                                        <label class="form-check-label" for="gpsOption">
+                                            GPS ($2.95/Day)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="assistanceOption">
+                                        <label class="form-check-label" for="assistanceOption">
+                                            Roadside Assistance($2.95/Day)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------end of Options-->
+                    <div class="row mb-3">
+                        <div class="col">
+                            <h5>Under 25</h5>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="checkboxYes"
+                                    value="option1">
+                                <label class="form-check-label"  for="checkboxYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="checkboxNo"
+                                    value="option2" checked>
+                                <label class="form-check-label"  for="checkboxNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!---End of under 25 -->
+
+                    <!---total results -->
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <button type="submit" id="submitBtn" class="btn btn-primary">Estimate Total
+                                Cost</button>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col">
+                            <label for="basePrice">Car Rental: $</label>
+                            <span id="basePrice" class="value">xx.xx</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="options">Options: $</label>
+                            <span id="optionsAmount" class="value">xx.xx</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="under25">Under 25 surcharge: $</label>
+                            <span id="surcharge" class="value">xx.xx</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="totalAmount">Total Due :$</label>
+                            <span id="totalAmount" class="value">xx.xx</span>
+                        </div>
+                    </div>
+
+
+                    <!-- your content goes here -->
+                </div>
+            </form>
+        </div>
     </main>
 
 
@@ -92,7 +121,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <script src="scripts/carIndex.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 
 </html>

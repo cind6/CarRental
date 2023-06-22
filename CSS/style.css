@@ -1,8 +1,17 @@
 body{
     background-color:rgb(138, 118, 227);
 }
-.margin-top{
 
-    margin-top: 16px;
+
+form{
+
+    background-color: aliceblue;
+    padding: 4;
     
+}
+
+#title{
+margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
 }
